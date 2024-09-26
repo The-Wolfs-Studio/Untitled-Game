@@ -1,11 +1,11 @@
 #include "raylib.h"
 
-string windowname = "r-tr-t--r0t-r-Untitled Game-r-t0r--t-rt-r";
+char windowname[] = "r-tr-t--r0t-r-Untitled Game-r-t0r--t-rt-r";
 bool debug = true;
 int main(void)
 {
     if (debug) { windowname += " | DEBUG MODE"; }
-    InitWindow(800, 450, windowname);
+    InitWindow(800, 450, windowname[0]);
 
     while (!WindowShouldClose())
     {

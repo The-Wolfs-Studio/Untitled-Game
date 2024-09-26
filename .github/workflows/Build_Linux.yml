@@ -23,12 +23,17 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y gcc
+        sudo apt-get install -y libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev libwayland-dev libxkbcommon-dev
         
     - name: Compiling time!
       run: |
-        git clone https://github.com/mastergive514/Untitled-Game.git
-        cd Untitled-Game
-        cc *.c -o Untitled-Game 
+        git clone --depth 1 https://github.com/raysan5/raylib.git raylib
+        cd raylib/src/
+        make PLATFORM=PLATFORM_DESKTOP
+        sudo make install
+        wget https://raw.githubusercontent.com/mastergive514/Untitled-Game/master/main.c
+        wget https://raw.githubusercontent.com/mastergive514/Untitled-Game/master/src/raylib.h
+        gcc main.c -o UntitledGame -O1 -Wall -std=c99 -Wno-missing-braces -L -lraylib -lopengl32 -lgdi32 -lwinmm
         mkdir output
         cp Untitled-Game output/
     

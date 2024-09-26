@@ -28,7 +28,7 @@ jobs:
       run: |
         git clone https://github.com/mastergive514/Untitled-Game.git
         cd Untitled-Game
-        cc -fno-math-errno *.c -o Untitled-Game -rdynamic -lpthread -lraylib
+        cc *.c -o Untitled-Game 
         mkdir output
         cp Untitled-Game output/
     

@@ -1,0 +1,42 @@
+name: Build The Game For Linux
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build The Game For Linux
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc
+        
+    - name: Compiling time!
+      run: |
+        git clone https://github.com/UnknownShadow200/Untitled-Game.git
+        cd Untitled-Game
+        cc -fno-math-errno *.c -o Untitled-Game -rdynamic -lpthread -lraylib
+        mkdir output
+        cp Untitled-Game output/
+    
+        
+
+    
+    - name: Upload Plugin
+      uses: actions/upload-artifact@v3
+      with:
+        name: Untitled-Game
+        path: Untitled-Game/output/

@@ -26,7 +26,7 @@ jobs:
         
     - name: Compiling time!
       run: |
-        git clone https://github.com/UnknownShadow200/Untitled-Game.git
+        git clone https://github.com/mastergive514/Untitled-Game.git
         cd Untitled-Game
         cc -fno-math-errno *.c -o Untitled-Game -rdynamic -lpthread -lraylib
         mkdir output

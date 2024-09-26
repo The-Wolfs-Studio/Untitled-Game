@@ -1,4 +1,4 @@
-#include <src/raylib.h>
+#include <raylib.h>
 
 string windowname = "r-tr-t--r0t-r-Untitled Game-r-t0r--t-rt-r";
 bool debug = true;

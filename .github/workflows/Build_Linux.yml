@@ -33,7 +33,7 @@ jobs:
         sudo make install
         wget https://raw.githubusercontent.com/mastergive514/Untitled-Game/master/main.c
         wget https://raw.githubusercontent.com/mastergive514/Untitled-Game/master/src/raylib.h
-        gcc main.c -o UntitledGame -O1 -Wall -std=c99 -Wno-missing-braces -L -lraylib -lopengl32 -lgdi32 -lwinmm
+        gcc main.c -o UntitledGame -O1 -Wall -std=c99 -Wno-missing-braces -L -lraylib 
         mkdir output
         cp Untitled-Game output/
     
